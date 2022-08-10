@@ -1,2 +1,8 @@
-<br>
-<%= link_to "Book index", books_path %>
+<div class="banner">
+  <div class="phrase">
+    <p><%= @line %></p>
+  </div>
+  <div class="home-btn">
+    <%= link_to 'Start Reading', books_path, class: "btn btn-ghost", id:"log-in" %>
+  </div>
+</div>

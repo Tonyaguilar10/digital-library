@@ -1,7 +1,7 @@
 .nav-bar {
   top: 0;
   width: 100%;
-  background: #DBD4D3;
+  background: #32506A;
   z-index:3;
   box-shadow: 0 0 10px #757780;
   transition-timing-function: ease-in-out;
@@ -18,26 +18,28 @@
 }
 
 .logo{
-  width: 50px;
+  width: 100px;
   margin-left: 0px;
   padding-left: 0px;
 }
 
 .nav-li a{
-  color: #387780;
+  color: #f2f2f2;
   text-decoration: none;
+  font-family: 'Oxygen', sans-serif;
 }
 
 .nav-li a:hover{
-  color: #E83151;
+  color: #FF8567;
 }
 
 .username{
-  color: #387780;
+  color: #f2f2f2;
+  font-family: 'Oxygen', sans-serif;
 }
 
 .username:hover{
-  color: #E83151;
+  color: #FF8567;
 }
 
 .btn-ghost {
@@ -45,40 +47,45 @@
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
+  font-family: 'Oxygen', sans-serif;
 }
 
 #sign-up {
-  color: #387780;
-  border: 1px solid #387780;
+  color: #f2f2f2;
+  border: 1px solid #E3765B;
   padding: 5px 15px 5px 15px;
 }
 
 #log-in {
-  color: #387780;
-  border: 1px solid #387780;
+  color: #f2f2f2;
+  background-color: #E3765B;
+  border: 1px solid #E3765B;
   padding: 5px 15px 5px 15px;
+  font-family: 'Oxygen', sans-serif;
 }
 
 #log-out {
-  color: #387780;
-  border: 1px solid #387780;
+  color: #f2f2f2;
+  background-color: #E3765B;
+  border: 1px solid #E3765B;
   padding: 5px 15px 5px 15px;
   margin-left: 15px;
+  font-family: 'Oxygen', sans-serif;
 }
 
 #log-out:hover {
-  background-color: #387780;
-  color: #DBD4D3;
+  background-color: #FF8567;
+  color: #f2f2f2;
 }
 
 #log-in:hover {
-  background-color: #387780;
-  color: #DBD4D3;
+  background-color: #FF8567;
+  color: #FFf2f2f28567;
 }
 
 #sign-up:hover {
-  background-color: #387780;
-  color: #DBD4D3;
+  background-color: #FF8567;
+  color: #f2f2f2;
 }
 
 .nav {

@@ -3,7 +3,7 @@
     <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <%= image_tag "book.png", class: "logo" %>
+                <%= image_tag "Logo.png", class: "logo" %>
               </a>
 
               <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -15,7 +15,7 @@
                 <% else %>
                   <li class="nav-li"><%= link_to 'Home', root_path, class: "nav-link px-2" %></li>
                   <li class="nav-li"><%= link_to 'Books', books_path, class: "nav-link px-2" %></li>
-                  <li class="nav-li"><%= link_to 'My Reservations', root_path, class: "nav-link px-2" %></li>
+                  <li class="nav-li"><%= link_to 'My Reservations', my_reservations_path, class: "nav-link px-2" %></li>
                 <% end %>
               </ul>
 
@@ -33,13 +33,13 @@
     <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-              <%= image_tag "book.png", class: "logo" %>
+              <%= image_tag "Logo.png", class: "logo" %>
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li class="nav-li"><%= link_to 'Home', root_path, class: "nav-link px-2" %></li>
               <li class="nav-li"><%= link_to 'Books', books_path, class: "nav-link px-2" %></li>
-                <li class="nav-li"><%= link_to 'My Reservations', root_path, class: "nav-link px-2" %></li>
+                <li class="nav-li"><%= link_to 'My Reservations', new_user_session_path, class: "nav-link px-2" %></li>
             </ul>
 
             <div>

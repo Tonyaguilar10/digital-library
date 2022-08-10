@@ -1,0 +1,16 @@
+<br>
+<div class="container">
+  <h2>Active Reservations</h2>
+  <% @open_reservations.each do |reservation| %>
+    <ul>
+      <li><%= reservation.book.title %></li>
+    </ul>
+  <% end %>
+  <br>
+  <h2>Previous Reservations</h2>
+  <% @closed_reservations.each do |reservation| %>
+    <ul>
+      <li><%= reservation.book.title %></li>
+    </ul>
+  <% end %>
+</div>

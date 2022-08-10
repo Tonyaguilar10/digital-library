@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :reservations, only: [ :new, :create, :update ]
   end
   resources :reservations, only: [ :index ]
+  get 'reservations/my_reservations', to: 'reservations#my_reservations', as: :my_reservations
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
