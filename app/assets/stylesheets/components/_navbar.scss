@@ -1,12 +1,86 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.nav-bar {
+  top: 0;
+  width: 100%;
+  background: #DBD4D3;
+  z-index:3;
+  box-shadow: 0 0 10px #757780;
+  transition-timing-function: ease-in-out;
+  transition: 0.5s;
+}
+.nav-bar-blur{
+  transition-timing-function: ease-in-out;
+  transition: 0.5s;
+  top: 0;
+  width: 100%;
+  z-index:3;
+  background: linear-gradient(40deg, rgba(34,47,59,0.5), rgba(69,114,87,0.25));
+  backdrop-filter: blur(5px);
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.logo{
+  width: 50px;
+  margin-left: 0px;
+  padding-left: 0px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-li a{
+  color: #387780;
+  text-decoration: none;
+}
+
+.nav-li a:hover{
+  color: #E83151;
+}
+
+.username{
+  color: #387780;
+}
+
+.username:hover{
+  color: #E83151;
+}
+
+.btn-ghost {
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+}
+
+#sign-up {
+  color: #387780;
+  border: 1px solid #387780;
+  padding: 5px 15px 5px 15px;
+}
+
+#log-in {
+  color: #387780;
+  border: 1px solid #387780;
+  padding: 5px 15px 5px 15px;
+}
+
+#log-out {
+  color: #387780;
+  border: 1px solid #387780;
+  padding: 5px 15px 5px 15px;
+  margin-left: 15px;
+}
+
+#log-out:hover {
+  background-color: #387780;
+  color: #DBD4D3;
+}
+
+#log-in:hover {
+  background-color: #387780;
+  color: #DBD4D3;
+}
+
+#sign-up:hover {
+  background-color: #387780;
+  color: #DBD4D3;
+}
+
+.nav {
+  margin-left: 50px;
 }

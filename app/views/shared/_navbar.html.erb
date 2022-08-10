@@ -1,36 +1,45 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<% if user_signed_in? %>
+  <div class="p-3  header nav-bar sticky-top">
+    <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <%= image_tag "book.png", class: "logo" %>
+              </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li class="nav-li"><%= link_to 'Home', root_path, class: "nav-link px-2" %></li>
+                <li class="nav-li"><%= link_to 'Books', books_path, class: "nav-link px-2" %></li>
+                <li class="nav-li"><%= link_to 'My Reservations', root_path, class: "nav-link px-2" %></li>
+              </ul>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <div class="dropdown text-end">
+                <div>
+                  <span class= "username"><%= current_user.first_name.capitalize %></span>
+                  <%= link_to 'Log out', destroy_user_session_path, method: 'delete', class: "btn btn-ghost", id:"log-out" %>
+                </div>
+              </div>
             </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+          </div>
+  </div>
+<% else %>
+  <div class="p-3  header nav-bar sticky-top">
+    <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+              <%= image_tag "book.png", class: "logo" %>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li class="nav-li"><%= link_to 'Home', root_path, class: "nav-link px-2" %></li>
+              <li class="nav-li"><%= link_to 'Books', books_path, class: "nav-link px-2" %></li>
+                <li class="nav-li"><%= link_to 'My Reservations', root_path, class: "nav-link px-2" %></li>
+            </ul>
+
+            <div>
+              <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-ghost", id:"sign-up" %>
+              <%= link_to 'Log in', new_user_session_path, class: "btn btn-ghost", id:"log-in" %>
+            </div>
+          </div>
     </div>
   </div>
-</div>
+<% end %>
