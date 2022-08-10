@@ -11,7 +11,12 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    @book = @book.new(book_params)
+    @book = Book.new(book_params)
+    if @book.save
+      redirect_to book_path(@book)
+    else
+      render :new
+    end
   end
 
   def edit
