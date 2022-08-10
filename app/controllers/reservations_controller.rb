@@ -1,4 +1,7 @@
 class ReservationsController < ApplicationController
+
+  before_action :set_reservation, only: [:update]
+
   def index
     @reservations = Reservation.all.where(reserved: true)
   end
@@ -29,6 +32,15 @@ class ReservationsController < ApplicationController
   end
 
   def update
+    @reservation.reserved = false
+    @reservation.book.stock += 1
+    @reservation.book.save
+    if @reservation.save
+      redirect_to reservations_path
+    else
+      render :new
+    end
+
   end
 
   def show
