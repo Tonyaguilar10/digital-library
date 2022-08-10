@@ -6,6 +6,11 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all.where(reserved: true)
   end
 
+  def my_reservations
+    @open_reservations = Reservation.all.where(reserved: true).and(Reservation.all.where(user: current_user))
+    @closed_reservations = Reservation.all.where(reserved: false).and(Reservation.all.where(user: current_user))
+  end
+
   def new
     @book = Book.find(params[:book_id])
     @user = current_user
