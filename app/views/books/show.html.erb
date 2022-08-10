@@ -1,2 +1,15 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<br>
+<div class="container">
+    <h2><%= @book.title %></h2>
+    <h3><%= @book.author %></h3>
+    <h3><%= @book.published_year %></h3>
+    <h3><%= @book.genre %></h3>
+    <h4><%= @book.stock %></h4>
+    <% if @book.stock == 0 %>
+      <h4>This book is out of stock</h4>
+    <% else %>
+      <%= link_to "Reserve book", book_reservations_path(@book), method: :post %>
+    <% end %>
+  <br>
+  <%= link_to "Back", :back %>
+</div>
