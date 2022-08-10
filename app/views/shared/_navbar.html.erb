@@ -10,7 +10,7 @@
                 <% if current_user.role %>
                   <li class="nav-li"><%= link_to 'Home', root_path, class: "nav-link px-2" %></li>
                   <li class="nav-li"><%= link_to 'Add Book', new_book_path, class: "nav-link px-2" %></li>
-                  <li class="nav-li"><%= link_to 'Active Reservations', root_path, class: "nav-link px-2" %></li>
+                  <li class="nav-li"><%= link_to 'Active Reservations', reservations_path, class: "nav-link px-2" %></li>
                   <li class="nav-li"><%= link_to 'Create Student Profile', create_student_path, class: "nav-link px-2" %></li>
                 <% else %>
                   <li class="nav-li"><%= link_to 'Home', root_path, class: "nav-link px-2" %></li>
@@ -43,7 +43,6 @@
             </ul>
 
             <div>
-              <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-ghost", id:"sign-up" %>
               <%= link_to 'Log in', new_user_session_path, class: "btn btn-ghost", id:"log-in" %>
             </div>
           </div>

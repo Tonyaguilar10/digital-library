@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   def index
+    @reservations = Reservation.all.where(reserved: true)
   end
 
   def new
