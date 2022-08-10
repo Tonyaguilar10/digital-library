@@ -7,9 +7,16 @@
               </a>
 
               <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li class="nav-li"><%= link_to 'Home', root_path, class: "nav-link px-2" %></li>
-                <li class="nav-li"><%= link_to 'Books', books_path, class: "nav-link px-2" %></li>
-                <li class="nav-li"><%= link_to 'My Reservations', root_path, class: "nav-link px-2" %></li>
+                <% if current_user.role %>
+                  <li class="nav-li"><%= link_to 'Home', root_path, class: "nav-link px-2" %></li>
+                  <li class="nav-li"><%= link_to 'Add Book', books_path, class: "nav-link px-2" %></li>
+                  <li class="nav-li"><%= link_to 'Active Reservations', root_path, class: "nav-link px-2" %></li>
+                  <li class="nav-li"><%= link_to 'Create Student Profile', create_student_path, class: "nav-link px-2" %></li>
+                <% else %>
+                  <li class="nav-li"><%= link_to 'Home', root_path, class: "nav-link px-2" %></li>
+                  <li class="nav-li"><%= link_to 'Books', books_path, class: "nav-link px-2" %></li>
+                  <li class="nav-li"><%= link_to 'My Reservations', root_path, class: "nav-link px-2" %></li>
+                <% end %>
               </ul>
 
               <div class="dropdown text-end">
