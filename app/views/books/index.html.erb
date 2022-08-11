@@ -1,8 +1,10 @@
 <br>
-<div class="container">
+<div class="container-book-index">
   <% @books.each do |book| %>
-    <h2><%= book.title %></h2>
-    <h3><%= link_to "view", book_path(book) %></h3>
-    <br>
+    <div class="book-info">
+      <p><strong><%= book.title %></strong></p>
+      <p><%= book.author %></p>
+      <%= link_to "view", book_path(book), class: "btn btn-ghost", id:"book-view"%>
+    </div>
   <% end %>
 </div>

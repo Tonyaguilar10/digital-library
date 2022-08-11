@@ -1,9 +1,10 @@
 <br>
-<div class="container">
+<div class="container-book-index">
   <% @reservations.each do |reservation| %>
-    <h2><%= reservation.book.title %></h2>
-    <h2><%= reservation.user.first_name %></h2>
-    <h3><%= link_to "Mark as returned", book_reservation_path(reservation.book.id, reservation.id), method: :patch %></h3>
-    <br>
+    <div class="book-info">
+      <p><strong>Book:</strong> <%= reservation.book.title %></p>
+      <p><strong>Student:</strong> <%= reservation.user.first_name %></p>
+      <%= link_to "Mark as returned", book_reservation_path(reservation.book.id, reservation.id), class: "btn btn-ghost", id:"book-view-2", method: :patch %>
+    </div>
   <% end %>
 </div>
