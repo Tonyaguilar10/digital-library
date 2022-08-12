@@ -9,7 +9,7 @@
   <% end %>
 </div>
 <div class="container-book-index">
-  <% if @books.nil? %>
+  <% if @books.empty? %>
       <h3 class="sear-result">Book not found</h3>
   <% else %>
     <% @books.each do |book| %>
