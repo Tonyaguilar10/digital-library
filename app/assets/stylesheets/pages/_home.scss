@@ -20,3 +20,28 @@
   font-family: 'Oxygen', sans-serif;
   color: #f2f2f2;
 }
+
+.footer{
+  background-color: #DFE5EB;
+  height: 170px;
+  padding: 35px;
+  .steps{
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: space-evenly;
+  }
+  .step{
+    margin: 15px;
+    width: 200px;
+    text-align: center;
+    color: #537AA2;
+    .i{
+      text-align: end;
+    }
+  }
+  .h4{
+    font-family: 'Oxygen', sans-serif;
+    color: #f2f2f2;
+  }
+}

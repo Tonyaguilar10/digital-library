@@ -1,8 +1,24 @@
-<br>
-<div class="container">
-  <% @books.each do |book| %>
-    <h2><%= book.title %></h2>
-    <h3><%= link_to "view", book_path(book) %></h3>
-    <br>
+<div class= "search">
+  <%= form_tag books_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a book"
+    %>
+    <%= submit_tag "Search", class: "btn btn-ghost", id:"log-out" %>
   <% end %>
+</div>
+<div class="container-book-index">
+  <% if @books.nil? %>
+      <h3 class="sear-result">Book not found</h3>
+  <% else %>
+    <% @books.each do |book| %>
+      <div class="book-info">
+        <p><strong><%= book.title %></strong></p>
+        <p><%= book.author %></p>
+        <%= link_to "view", book_path(book), class: "btn btn-ghost", id:"book-view"%>
+      </div>
+    <% end %>
+  <% end %>
+
 </div>

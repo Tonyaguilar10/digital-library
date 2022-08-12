@@ -1,9 +1,23 @@
-<br>
-<div class="container">
-  <% @reservations.each do |reservation| %>
-    <h2><%= reservation.book.title %></h2>
-    <h2><%= reservation.user.first_name %></h2>
-    <h3><%= link_to "Mark as returned", book_reservation_path(reservation.book.id, reservation.id), method: :patch %></h3>
-    <br>
+<div class= "search">
+  <%= form_tag reservations_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a student"
+  %>
+  <%= submit_tag "Search", class: "btn btn-ghost", id:"log-out" %>
+<% end %>
+</div>
+<div class="container-book-index">
+  <% if @reservations.empty? %>
+      <h3 class= "search-result">Student not found</h3>
+  <% else %>
+    <% @reservations.each do |reservation| %>
+      <div class="book-info">
+        <p><strong>Book:</strong> <%= reservation.book.title %></p>
+        <p><strong>Student:</strong> <%= reservation.user.first_name %></p>
+        <%= link_to "Mark as returned", book_reservation_path(reservation.book.id, reservation.id), class: "btn btn-ghost", id:"book-view-2", method: :patch %>
+      </div>
+    <% end %>
   <% end %>
 </div>

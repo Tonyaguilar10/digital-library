@@ -1,16 +1,20 @@
-<br>
 <div class="container">
-  <h2>Active Reservations</h2>
-  <% @open_reservations.each do |reservation| %>
-    <ul>
-      <li><%= reservation.book.title %></li>
-    </ul>
-  <% end %>
-  <br>
-  <h2>Previous Reservations</h2>
-  <% @closed_reservations.each do |reservation| %>
-    <ul>
-      <li><%= reservation.book.title %></li>
-    </ul>
-  <% end %>
+  <h2 class= "headline">Active Reservations</h2>
+  <div class="container-book-index">
+    <% @open_reservations.each do |reservation| %>
+      <div class="book-info">
+        <p><%= reservation.book.title %></p>
+        <%= image_tag "open-book.png", class: "img-book" %>
+      </div>
+    <% end %>
+  </div>
+  <h2 class= "headline">Previous Reservations</h2>
+  <div class="container-book-index">
+    <% @closed_reservations.each do |reservation| %>
+      <div class="book-info">
+        <p><%= reservation.book.title %></p>
+        <%= image_tag "closed-book.png", class: "img-book-2" %>
+      </div>
+    <% end %>
+  </div>
 </div>

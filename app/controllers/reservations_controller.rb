@@ -3,7 +3,16 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:update]
 
   def index
-    @reservations = Reservation.all.where(reserved: true)
+    if params[:query].present?
+      sql_query = <<~SQL
+        users.first_name ILIKE :query
+        OR users.last_name ILIKE :query
+        OR users.email ILIKE :query
+        SQL
+      @reservations = Reservation.joins(:user).where(sql_query, query: "%#{params[:query]}%").and(Reservation.all.where(reserved: true))
+    else
+      @reservations = Reservation.all.where(reserved: true)
+    end
   end
 
   def my_reservations

@@ -1,2 +1,32 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<div class="container-add-book">
+  <%= simple_form_for( @book ) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :title,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "name" }%>
+      <%= f.input :author,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "last name" }%>
+      <%= f.input :published_year,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :genre,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "last name" }%>
+      <%= f.input :stock,
+                  required: true,
+                  hint: ("1 minimum"),
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Edit Book", class: "btn btn-ghost", id:"log-out"%>
+    </div>
+  <% end %>
+</div>

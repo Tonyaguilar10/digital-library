@@ -1,15 +1,31 @@
-<br>
-<div class="container">
-    <h2><%= @book.title %></h2>
-    <h3><%= @book.author %></h3>
-    <h3><%= @book.published_year %></h3>
-    <h3><%= @book.genre %></h3>
-    <h4><%= @book.stock %></h4>
+
+<div class="container-show-book">
+    <div class="show-img">
+      <%= image_tag "Book.png", class: "img-book-show" %>
+    </div>
+    <div class="book-data">
+      <h4 class= title-book><strong><%=@book.title%></strong></h4>
+      <p><strong>Author: </strong><%=@book.author%></p>
+      <p><strong>Published: </strong><%=@book.published_year%></p>
+      <p><strong>Genre: </strong><%=@book.genre%></p>
     <% if @book.stock == 0 %>
-      <h4>This book is out of stock</h4>
+      <p><strong>This book is out of stock</strong></p>
     <% else %>
-      <%= link_to "Reserve book", book_reservations_path(@book), method: :post %>
+      <% if user_signed_in? %>
+        <p><strong>stock: </strong><%=@book.stock%></p>
+        <% user = current_user %>
+        <% if user.role %>
+          <%= link_to "Edit book", edit_book_path(@book),class: "btn btn-ghost", id:"reserve-book"%>
+        <% else %>
+          <%= link_to "Reserve book", book_reservations_path(@book),class: "btn btn-ghost", id:"reserve-book", method: :post %>
+        <% end %>
+      <% else %>
+        <p><strong>stock: </strong><%=@book.stock%></p>
+        <%= link_to "Reserve book", new_user_session_path,class: "btn btn-ghost", id:"reserve-book", method: :post %>
+      <% end %>
     <% end %>
-  <br>
-  <%= link_to "Back", :back %>
+    </div>
+</div>
+<div class="container">
+<%= link_to "Back", books_path, class: "btn btn-ghost", id:"log-out" %>
 </div>
