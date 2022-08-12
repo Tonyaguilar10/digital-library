@@ -11,8 +11,18 @@
     <% if @book.stock == 0 %>
       <p><strong>This book is out of stock</strong></p>
     <% else %>
-    <p><strong>stock: </strong><%=@book.stock%></p>
-      <%= link_to "Reserve book", book_reservations_path(@book),class: "btn btn-ghost", id:"reserve-book", method: :post %>
+      <% if user_signed_in? %>
+        <p><strong>stock: </strong><%=@book.stock%></p>
+        <% user = current_user %>
+        <% if user.role %>
+          <%= link_to "Edit book", edit_book_path(@book),class: "btn btn-ghost", id:"reserve-book"%>
+        <% else %>
+          <%= link_to "Reserve book", book_reservations_path(@book),class: "btn btn-ghost", id:"reserve-book", method: :post %>
+        <% end %>
+      <% else %>
+        <p><strong>stock: </strong><%=@book.stock%></p>
+        <%= link_to "Reserve book", new_user_session_path,class: "btn btn-ghost", id:"reserve-book", method: :post %>
+      <% end %>
     <% end %>
     </div>
 </div>
