@@ -4,6 +4,7 @@
     <% @open_reservations.each do |reservation| %>
       <div class="book-info">
         <p><%= reservation.book.title %></p>
+        <%= image_tag "open-book.png", class: "img-book" %>
       </div>
     <% end %>
   </div>
@@ -12,6 +13,7 @@
     <% @closed_reservations.each do |reservation| %>
       <div class="book-info">
         <p><%= reservation.book.title %></p>
+        <%= image_tag "closed-book.png", class: "img-book-2" %>
       </div>
     <% end %>
   </div>
